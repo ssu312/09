@@ -1,4 +1,4 @@
-/*실습 2: 배열 및 반복문 활용*/
+/*실습 3: 배열 값 복사*/
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 5
@@ -7,22 +7,21 @@ int main(void)
 {
     int i;
     int grade[SIZE];
-    int sum = 0;
-
-    printf("5명의 점수를 입력하세요. \n");
+    int score[SIZE];
 
     for(i=0;i<SIZE;i++)
-    {
-        scanf("%d", &grade[i]);
-        sum += grade[i];
+    {   grade[i] = rand()%100;
+        printf("grade[%d] = %d\n", i, grade[i]);
     }
     
-    //각 배열의 값 프린트하기
     for(i=0;i<SIZE;i++)
-        printf("grade[%d] = %d\n", i, grade[i]);  
+        score[i] = grade [i];
+    
+    for(i=0;i<SIZE;i++)
+    {
+        printf("score[%d] = %d\n", i, score[i]);
+        
+    }
 
-    //평균 프린트하기
-    printf("성적 평균 : %d\n", sum/SIZE);
-
-    return 0; 
+    return 0;
 }
