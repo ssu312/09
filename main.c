@@ -1,18 +1,28 @@
-/*실습 1: 배열의 활용 */
+/*실습 2: 배열 및 반복문 활용*/
 #include <stdio.h>
+#include <stdlib.h>
+#define SIZE 5
 
 int main(void)
 {
-    int score[5];
+    int i;
+    int grade[SIZE];
+    int sum = 0;
 
-    score[0]= 100;
-    score[1]= 99;
-    score[2]= 98;
-    score[3]= 100;
-    score[4]= 91;
+    printf("5명의 점수를 입력하세요. \n");
+
+    for(i=0;i<SIZE;i++)
+    {
+        scanf("%d", &grade[i]);
+        sum += grade[i];
+    }
     
-    for (int i=0;i<5;i++)
-        printf("score[%d] = %d\n", i, score[i]);
+    //각 배열의 값 프린트하기
+    for(i=0;i<SIZE;i++)
+        printf("grade[%d] = %d\n", i, grade[i]);  
 
-    return 0;
+    //평균 프린트하기
+    printf("성적 평균 : %d\n", sum/SIZE);
+
+    return 0; 
 }
